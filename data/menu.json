@@ -1,0 +1,136 @@
+{
+  "menu": {
+    "status": "success",
+    "data": [
+      {
+        "id": 1,
+        "name": "Ayam Betutu (1/4 ekor)",
+        "unitPrice": 40000,
+        "imageUrl": "../public/ayambetutuquarter.png",
+        "ingredients": ["Ayam Kampung", "Bumbu Genep", "Bumbu Wewangenan"],
+        "soldOut": false
+      },
+      {
+        "id": 2,
+        "name": "Ayam Betutu (1 ekor)",
+        "unitPrice": 120000,
+        "imageUrl": "../public/ayambetutu.png",
+        "ingredients": ["Ayam Kampung", "Bumbu Genep", "Bumbu Wewangenan"],
+        "soldOut": true
+      },
+      {
+        "id": 3,
+        "name": "Sate Lilit",
+        "unitPrice": 25000,
+        "imageUrl": "../public/satelilit.png",
+        "ingredients": ["Ikan", "Bumbu genep", "Serai"],
+        "soldOut": false
+      },
+      {
+        "id": 4,
+        "name": "Nasi Campur",
+        "unitPrice": 23000,
+        "imageUrl": "../public/nasicampur.png",
+        "ingredients": ["Ayam Suwir", "Sate Lilit", "Sayur Urap, Sambal Matah"],
+        "soldOut": false
+      },
+      {
+        "id": 5,
+        "name": "Lawar Ayam",
+        "unitPrice": 23000,
+        "imageUrl": "../public/lawarayam.png",
+        "ingredients": ["Ayam Kampung", "Nangka Muda", "Kacang Panjang"],
+        "soldOut": false
+      },
+      {
+        "id": 6,
+        "name": "Lawar Kuwir",
+        "unitPrice": 23000,
+        "imageUrl": "../public/lawarkuwir.png",
+        "ingredients": ["Kuwir (Bebek)", "Nangka Muda", "Sayur Belimbing Muda"],
+        "soldOut": false
+      },
+      {
+        "id": 7,
+        "name": "Tipat Cantok",
+        "unitPrice": 13000,
+        "imageUrl": "../public/tipatcantok.png",
+        "ingredients": ["Ketupat", "Sayuran Rebus", "Bumbu Kacang"],
+        "soldOut": false
+      },
+      {
+        "id": 8,
+        "name": "Sudang Lepet",
+        "unitPrice": 15000,
+        "imageUrl": "../public/sudanglepet.png",
+        "ingredients": ["Ikan Asin", "Sambal Embe"],
+        "soldOut": true
+      },
+      {
+        "id": 9,
+        "name": "Tipat Blayag",
+        "unitPrice": 14000,
+        "imageUrl": "../public/tipatblayag.png",
+        "ingredients": [
+          "Ketupat",
+          "Sayur Urap",
+          "Ayam Suwir",
+          "Kuah Nyat-Nyat"
+        ],
+        "soldOut": false
+      },
+      {
+        "id": 10,
+        "name": "Tum Ayam",
+        "unitPrice": 15000,
+        "imageUrl": "../public/tumayam.png",
+        "ingredients": ["Pepes Ayam", "Bumbu Genep"],
+        "soldOut": false
+      },
+      {
+        "id": 11,
+        "name": "Sate Plecing",
+        "unitPrice": 25000,
+        "imageUrl": "../public/sateplecing.png",
+        "ingredients": ["Ayam", "Bumbu Plecing", "Sambal"],
+        "soldOut": false
+      },
+      {
+        "id": 12,
+        "name": "Bubur Mengguh",
+        "unitPrice": 16000,
+        "imageUrl": "../public/buburmengguh.png",
+        "ingredients": ["Bubur", "Ayam Suwir", "Sayuran", "Bumbu Rempah"],
+        "soldOut": false
+      },
+      {
+        "id": 13,
+        "name": "Rujak Buleleng",
+        "unitPrice": 1000,
+        "imageUrl": "../public/rujakbuleleng.png",
+        "ingredients": [
+          "Pisang Batu",
+          "Aneka Buah",
+          "Gula Aren",
+          "Cabai",
+          "Cuka"
+        ],
+        "soldOut": true
+      },
+      {
+        "id": 14,
+        "name": "Rujak Kuah Pindang",
+        "unitPrice": 12000,
+        "imageUrl": "../public/rujakkuahpindang.png",
+        "ingredients": [
+          "Aneka Buah",
+          "Kaldu Pindang",
+          "Cabai",
+          "Asam Jawa",
+          "Gula Aren"
+        ],
+        "soldOut": false
+      }
+    ]
+  }
+}
