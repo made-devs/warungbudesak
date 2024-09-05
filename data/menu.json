@@ -7,7 +7,11 @@
         "name": "Ayam Betutu (1/4 ekor)",
         "unitPrice": 40000,
         "imageUrl": "../public/ayambetutuquarter.png",
-        "ingredients": ["Ayam Kampung", "Bumbu Genep", "Bumbu Wewangenan"],
+        "ingredients": [
+          "Ayam Kampung",
+          "Bumbu Genep",
+          "Bumbu Wewangenan"
+        ],
         "soldOut": false
       },
       {
@@ -15,7 +19,11 @@
         "name": "Ayam Betutu (1 ekor)",
         "unitPrice": 120000,
         "imageUrl": "../public/ayambetutu.png",
-        "ingredients": ["Ayam Kampung", "Bumbu Genep", "Bumbu Wewangenan"],
+        "ingredients": [
+          "Ayam Kampung",
+          "Bumbu Genep",
+          "Bumbu Wewangenan"
+        ],
         "soldOut": true
       },
       {
@@ -23,7 +31,11 @@
         "name": "Sate Lilit",
         "unitPrice": 25000,
         "imageUrl": "../public/satelilit.png",
-        "ingredients": ["Ikan", "Bumbu genep", "Serai"],
+        "ingredients": [
+          "Ikan",
+          "Bumbu genep",
+          "Serai"
+        ],
         "soldOut": false
       },
       {
@@ -31,7 +43,11 @@
         "name": "Nasi Campur",
         "unitPrice": 23000,
         "imageUrl": "../public/nasicampur.png",
-        "ingredients": ["Ayam Suwir", "Sate Lilit", "Sayur Urap, Sambal Matah"],
+        "ingredients": [
+          "Ayam Suwir",
+          "Sate Lilit",
+          "Sayur Urap, Sambal Matah"
+        ],
         "soldOut": false
       },
       {
@@ -39,7 +55,11 @@
         "name": "Lawar Ayam",
         "unitPrice": 23000,
         "imageUrl": "../public/lawarayam.png",
-        "ingredients": ["Ayam Kampung", "Nangka Muda", "Kacang Panjang"],
+        "ingredients": [
+          "Ayam Kampung",
+          "Nangka Muda",
+          "Kacang Panjang"
+        ],
         "soldOut": false
       },
       {
@@ -47,7 +67,11 @@
         "name": "Lawar Kuwir",
         "unitPrice": 23000,
         "imageUrl": "../public/lawarkuwir.png",
-        "ingredients": ["Kuwir (Bebek)", "Nangka Muda", "Sayur Belimbing Muda"],
+        "ingredients": [
+          "Kuwir (Bebek)",
+          "Nangka Muda",
+          "Sayur Belimbing Muda"
+        ],
         "soldOut": false
       },
       {
@@ -55,7 +79,11 @@
         "name": "Tipat Cantok",
         "unitPrice": 13000,
         "imageUrl": "../public/tipatcantok.png",
-        "ingredients": ["Ketupat", "Sayuran Rebus", "Bumbu Kacang"],
+        "ingredients": [
+          "Ketupat",
+          "Sayuran Rebus",
+          "Bumbu Kacang"
+        ],
         "soldOut": false
       },
       {
@@ -63,7 +91,10 @@
         "name": "Sudang Lepet",
         "unitPrice": 15000,
         "imageUrl": "../public/sudanglepet.png",
-        "ingredients": ["Ikan Asin", "Sambal Embe"],
+        "ingredients": [
+          "Ikan Asin",
+          "Sambal Embe"
+        ],
         "soldOut": true
       },
       {
@@ -84,7 +115,10 @@
         "name": "Tum Ayam",
         "unitPrice": 15000,
         "imageUrl": "../public/tumayam.png",
-        "ingredients": ["Pepes Ayam", "Bumbu Genep"],
+        "ingredients": [
+          "Pepes Ayam",
+          "Bumbu Genep"
+        ],
         "soldOut": false
       },
       {
@@ -92,7 +126,11 @@
         "name": "Sate Plecing",
         "unitPrice": 25000,
         "imageUrl": "../public/sateplecing.png",
-        "ingredients": ["Ayam", "Bumbu Plecing", "Sambal"],
+        "ingredients": [
+          "Ayam",
+          "Bumbu Plecing",
+          "Sambal"
+        ],
         "soldOut": false
       },
       {
@@ -100,7 +138,12 @@
         "name": "Bubur Mengguh",
         "unitPrice": 16000,
         "imageUrl": "../public/buburmengguh.png",
-        "ingredients": ["Bubur", "Ayam Suwir", "Sayuran", "Bumbu Rempah"],
+        "ingredients": [
+          "Bubur",
+          "Ayam Suwir",
+          "Sayuran",
+          "Bumbu Rempah"
+        ],
         "soldOut": false
       },
       {
@@ -132,5 +175,105 @@
         "soldOut": false
       }
     ]
-  }
+  },
+  "order": [
+    {
+      "id": "IIDSAT",
+      "customer": "Jonas Schmedtmann",
+      "status": "delivered",
+      "priority": true,
+      "cart": [
+        {
+          "menuId": 1,
+          "name": "Ayam Betutu (1/4 ekor)",
+          "quantity": 2,
+          "unitPrice": 40000,
+          "totalPrice": 80000
+        }
+      ],
+      "estimatedDelivery": "2024-09-05T10:42:22.937Z",
+      "orderPrice": 149000,
+      "priorityPrice": 3000
+    },
+    {
+      "id": "NEWID",
+      "customer": "Nama Pelanggan",
+      "status": "pending",
+      "priority": false,
+      "cart": [
+        {
+          "menuId": 14,
+          "name": "Rujak Kuah Pindang",
+          "quantity": 1,
+          "unitPrice": 12000,
+          "totalPrice": 12000
+        }
+      ],
+      "estimatedDelivery": "2023-09-06T08:00:00Z",
+      "orderPrice": 12000,
+      "priorityPrice": 0
+    },
+    {
+      "id": "3b64",
+      "customer": "made",
+      "phone": "087883592731",
+      "address": "BOGOR",
+      "priority": true,
+      "cart": [
+        {
+          "pizzaId": 12,
+          "name": "Mediterranean",
+          "quantity": 2,
+          "unitPrice": 16,
+          "totalPrice": 32
+        },
+        {
+          "pizzaId": 6,
+          "name": "Vegetale",
+          "quantity": 1,
+          "unitPrice": 13,
+          "totalPrice": 13
+        },
+        {
+          "pizzaId": 11,
+          "name": "Spinach and Mushroom",
+          "quantity": 1,
+          "unitPrice": 15,
+          "totalPrice": 15
+        }
+      ],
+      "estimatedDelivery": "2024-09-05T15:07:43.333Z"
+    },
+    {
+      "id": "b3dc",
+      "customer": "asd",
+      "phone": "12312312",
+      "address": "asfada",
+      "cart": [
+        {
+          "pizzaId": 12,
+          "name": "Mediterranean",
+          "quantity": 2,
+          "unitPrice": 16,
+          "totalPrice": 32
+        },
+        {
+          "pizzaId": 6,
+          "name": "Vegetale",
+          "quantity": 1,
+          "unitPrice": 13,
+          "totalPrice": 13
+        },
+        {
+          "pizzaId": 11,
+          "name": "Spinach and Mushroom",
+          "quantity": 1,
+          "unitPrice": 15,
+          "totalPrice": 15
+        }
+      ],
+      "priority": false,
+      "estimatedDelivery": "2024-09-05T15:50:29.959Z"
+    }
+  ]
 }
