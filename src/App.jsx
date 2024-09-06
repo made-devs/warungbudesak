@@ -22,7 +22,6 @@ const router = createBrowserRouter([
         path: '/menu',
         element: <Menu />,
         loader: menuLoader,
-        errorElement: <Error />,
       },
       {
         path: '/cart',
@@ -40,6 +39,7 @@ const router = createBrowserRouter([
         errorElement: <Error />,
       },
     ],
+    errorElement: <Error />,
   },
 ]);
 
@@ -48,4 +48,3 @@ function App() {
 }
 
 export default App;
-
