@@ -8,7 +8,7 @@ function Menu() {
   console.log(menu);
 
   return (
-    <ul>
+    <ul className="divide-y divide-stone-200 px-5 pb-12 pt-4">
       {menu.map((menuBali) => (
         <MenuItem menuBali={menuBali} key={menuBali.id} />
       ))}
@@ -22,4 +22,3 @@ export async function loader() {
 }
 
 export default Menu;
-

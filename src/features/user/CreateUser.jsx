@@ -9,9 +9,9 @@ function CreateUser() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <p className="font-outfit mb-3 text-base font-medium text-stone-600 md:text-base">
-        Om Swastyastu 👋
+    <form onSubmit={handleSubmit} className="z-20 h-40 w-[25rem]">
+      <p className="my-3 font-outfit text-sm font-medium text-stone-600 md:text-lg">
+        Om Swastyastu
         <br />
         Masukan namamu untuk mulai memesan.
       </p>
@@ -21,14 +21,10 @@ function CreateUser() {
         placeholder="Nama Kamu"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        className="input mb-8 w-72"
+        className="input mb-6 w-72"
       />
 
-      {username !== '' && (
-        <div>
-          <Button>Start ordering</Button>
-        </div>
-      )}
+      {username !== '' && <Button>Pesan sekarang!</Button>}
     </form>
   );
 }
