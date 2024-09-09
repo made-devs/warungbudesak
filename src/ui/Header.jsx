@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="flex items-center justify-between border-b border-stone-300 bg-orange-400 px-4 py-3 sm:px-6">
       <Link to="/" className="tracking-widest">
-        Dapur Bu Desak
+        <img src="../../public/logo.png" className="mt-[-5px] w-32" />
       </Link>
       <SearchOrder />
       <Username />
