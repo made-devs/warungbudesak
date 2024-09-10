@@ -10,10 +10,16 @@ import { formatCurrency } from '../../utils/helpers';
 import { useState } from 'react';
 
 // https://uibakery.io/regex-library/phone-number
-const isValidPhone = (str) =>
-  /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-    str,
-  );
+// const isValidPhone = (str) =>
+//   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
+//     str,
+//   );
+const isValidPhone = (str) => {
+  // Regex untuk memeriksa format nomor telepon dengan awalan 08 dan panjang 10-12 digit
+  const formatValid = /^08\d{8,10}$/.test(str);
+
+  return formatValid;
+};
 
 function CreateOrder() {
   const username = useSelector((state) => state.user.username);
