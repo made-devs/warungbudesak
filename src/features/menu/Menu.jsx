@@ -5,10 +5,9 @@ import MenuItem from './MenuItem';
 
 function Menu() {
   const menu = useLoaderData();
-  console.log(menu);
 
   return (
-    <ul className="divide-y divide-stone-200 px-5 pb-12 pt-4">
+    <ul className="divide-y divide-stone-200 px-3 pb-12 pt-4 xl:mx-auto xl:w-[70rem]">
       {menu.map((menuBali) => (
         <MenuItem menuBali={menuBali} key={menuBali.id} />
       ))}

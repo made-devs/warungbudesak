@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://test-api-xi-lac.vercel.app';
 
 export async function getMenu() {
   const res = await fetch(`${API_URL}/menu`);
@@ -60,4 +60,3 @@ export async function updateOrder(id, updateObj) {
     throw Error('Failed updating your order');
   }
 }
-
