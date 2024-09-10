@@ -83,7 +83,7 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
-            Want to yo give your order priority?
+            Mau jadikan pesananmu prioritas? (+20% dari total pesanan)
           </label>
         </div>
 
@@ -92,7 +92,7 @@ function CreateOrder() {
 
           <Button disabled={isSubmitting}>
             {isSubmitting
-              ? 'Placing order....'
+              ? 'Memuat pesanan...'
               : `Pesan sekarang (${formatCurrency(totalPrice)})`}
           </Button>
         </div>
