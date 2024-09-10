@@ -118,9 +118,15 @@ export async function action({ request }) {
   };
 
   const errors = {};
+  const phoneNumber = order.phone;
   if (!isValidPhone(order.phone))
     errors.phone =
-      'Please give us your correct phone number. We might need it to contact you.';
+      'Tolong masukkan nomor telepon yang tepat agar kami bisa menghubungi kamu';
+
+  if (phoneNumber.length < 10 || phoneNumber.length > 12) {
+    errors.phone =
+      'Nomor telepon harus memiliki panjang antara 10 hingga 12 karakter';
+  }
 
   if (Object.keys(errors).length > 0) return errors;
 
