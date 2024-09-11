@@ -42,7 +42,7 @@ function CreateOrder() {
     >
       <CartReview />
       <div className="mb-8 flex justify-between divide-stone-200 border-b px-1 pb-4 xl:w-[70rem]">
-        <div className="h-[2.8rem]">
+        <div className="h-[2.6rem]">
           <p>Total Harga </p>
           {withPriority ? (
             <p className="text-xs">
@@ -95,7 +95,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-5 flex items-center gap-3 px-6 text-sm xl:px-0">
+        <div className="mb-9 flex items-center gap-3 text-sm xl:px-0">
           <input
             type="checkbox"
             name="priority"
