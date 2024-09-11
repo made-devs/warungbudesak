@@ -39,7 +39,7 @@ function Cart() {
         ))}
       </ul>
 
-      <div className="mt-6 space-x-5">
+      <div className="mt-10 flex justify-center space-x-5">
         <Link to="/order/new">
           <Button to="/order/new">Konfirmasi</Button>
         </Link>
