@@ -95,7 +95,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-5 flex items-center gap-3 px-6 text-sm">
+        <div className="mb-5 flex items-center gap-3 px-6 text-sm xl:px-0">
           <input
             type="checkbox"
             name="priority"
