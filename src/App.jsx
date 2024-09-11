@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import { AnimatePresence } from 'framer-motion';
 import Home from './ui/Home';
 import Menu, { loader as menuLoader } from './features/menu/Menu';
 import Cart from './features/cart/Cart';
@@ -44,7 +44,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <AnimatePresence mode="wait">
+      <RouterProvider router={router} />;
+    </AnimatePresence>
+  );
 }
 
 export default App;

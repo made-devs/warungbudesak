@@ -1,10 +1,21 @@
 /* eslint-disable react/prop-types */
+import { useState } from 'react';
 import { formatCurrency } from '../../utils/helpers';
 import DeleteItem from './DeleteItem';
 import UpdateItemQuantity from './UpdateItemQuantity';
+import { useDispatch } from 'react-redux';
+import { updateNotes } from './CartSlice';
 
 function CartItem({ item }) {
+  const [notes, setNotes] = useState(item.notes || '');
   const { menuId, name, quantity, totalPrice } = item;
+  const dispatch = useDispatch();
+
+  function handleNotesChange(e) {
+    const newNotes = e.target.value;
+    setNotes(newNotes);
+    dispatch(updateNotes({ menuId: menuId, notes: newNotes }));
+  }
 
   return (
     <li className="py-3 sm:flex sm:items-center sm:justify-between">
@@ -18,6 +29,15 @@ function CartItem({ item }) {
           <DeleteItem menuId={menuId} />
         </div>
       </div>
+      <form>
+        <input
+          placeholder="Tambahkan catatan"
+          type="text"
+          onChange={handleNotesChange}
+          value={notes}
+          className="rounded-full bg-stone-200 px-2 py-1 text-sm"
+        />
+      </form>
     </li>
   );
 }

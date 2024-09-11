@@ -1,19 +1,15 @@
 /* eslint-disable react-refresh/only-export-components */
 import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 import { createOrder } from '../../services/apiRestaurant';
-import Button from '../../ui/Button';
 import { useSelector } from 'react-redux';
 import { clearCart, getCart, getTotalPrice } from '../cart/CartSlice';
 import EmptyCart from '../cart/EmptyCart';
 import store from '../../store';
 import { formatCurrency } from '../../utils/helpers';
 import { useState } from 'react';
+import CartReview from '../cart/CartReview';
+import { motion } from 'framer-motion';
 
-// https://uibakery.io/regex-library/phone-number
-// const isValidPhone = (str) =>
-//   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
-//     str,
-//   );
 const isValidPhone = (str) => {
   // Regex untuk memeriksa format nomor telepon dengan awalan 08 dan panjang 10-12 digit
   const formatValid = /^08\d{8,10}$/.test(str);
@@ -31,13 +27,33 @@ function CreateOrder() {
   const [withPriority, setWithPriority] = useState(false);
   const cart = useSelector(getCart);
   const totalCartPrice = useSelector(getTotalPrice);
-  const priorityPrice = withPriority ? totalCartPrice * 0.2 : 0;
+  const priorityPrice = withPriority ? totalCartPrice * 0.15 : 0;
   const totalPrice = totalCartPrice + priorityPrice;
 
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <div className="px-4 py-6">
+    <motion.div
+      initial={{ opacity: 0, x: -400 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 400 }}
+      transition={{ duration: 0.3 }}
+      className="px-4 py-0 font-outfit xl:mx-auto xl:w-[70rem]"
+    >
+      <CartReview />
+      <div className="mb-8 flex justify-between divide-stone-200 border-b px-1 pb-4 xl:w-[70rem]">
+        <div className="h-[2.8rem]">
+          <p>Total Harga </p>
+          {withPriority ? (
+            <p className="text-xs">
+              + Prioritas: {formatCurrency(priorityPrice)}
+            </p>
+          ) : null}
+        </div>
+        <p className="w-28 text-end text-sm font-bold">
+          {formatCurrency(totalPrice)}
+        </p>
+      </div>
       <h2 className="mb-8 font-outfit text-xl font-semibold">
         Isi data untuk mulai pesanan
       </h2>
@@ -79,7 +95,7 @@ function CreateOrder() {
           </div>
         </div>
 
-        <div className="mb-12 flex items-center gap-5">
+        <div className="mb-5 flex items-center gap-3 px-6 text-sm">
           <input
             type="checkbox"
             name="priority"
@@ -89,21 +105,23 @@ function CreateOrder() {
             onChange={(e) => setWithPriority(e.target.checked)}
           />
           <label htmlFor="priority" className="font-medium">
-            Mau jadikan pesananmu prioritas? (+20% dari total pesanan)
+            Jadikan pesanan prioritas? (+15% dari total harga)
           </label>
         </div>
-
-        <div>
+        <p className="mx-auto mb-2 text-center text-xs">
+          Pembayaran hanya tersedia Cash on Delivery untuk saat ini
+        </p>
+        <div className="mb-24 flex">
           <input type="hidden" name="cart" value={JSON.stringify(cart)} />
-
-          <Button disabled={isSubmitting}>
-            {isSubmitting
-              ? 'Memuat pesanan...'
-              : `Pesan sekarang (${formatCurrency(totalPrice)})`}
-          </Button>
+          <button disabled={isSubmitting} className="relative z-10 mx-auto">
+            <span className="absolute left-0 top-0 ml-1 mt-1 h-full w-full rounded bg-black"></span>
+            <span className="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-orange-400 px-3 py-1 text-base font-bold text-black transition-all duration-300 hover:bg-orange-300 active:left-1 active:top-1">
+              {isSubmitting ? 'Memuat pesanan...' : `Pesan sekarang`}
+            </span>
+          </button>
         </div>
       </Form>
-    </div>
+    </motion.div>
   );
 }
 

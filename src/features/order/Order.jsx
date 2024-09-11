@@ -8,6 +8,7 @@ import {
   formatCurrency,
   formatDate,
 } from '../../utils/helpers';
+import { motion } from 'framer-motion';
 
 const Order = function Order() {
   const order = useLoaderData();
@@ -18,7 +19,13 @@ const Order = function Order() {
   console.log(cart);
 
   return (
-    <div className="space-y-8 px-6 py-6 font-outfit">
+    <motion.div
+      initial={{ opacity: 0, x: -400 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 400 }}
+      transition={{ duration: 0.3 }}
+      className="space-y-8 px-6 py-6 font-outfit"
+    >
       <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-xl font-semibold">Pesanan #{id}</h2>
 
@@ -70,7 +77,7 @@ const Order = function Order() {
           Total Biaya (COD): {formatCurrency(orderPrice + priorityPrice)}
         </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

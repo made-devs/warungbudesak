@@ -1,11 +1,18 @@
 import { useSelector } from 'react-redux';
 import CreateUser from '../features/user/CreateUser';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function Home() {
   const username = useSelector((state) => state.user.username);
   return (
-    <div className="transition-all">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+      className="transition-all"
+    >
       <img
         src="/full-art3.webp"
         className="absolute right-0 top-0 z-0 hidden xl:block"
@@ -41,7 +48,7 @@ function Home() {
         src="/full-art2.webp"
         className="absolute bottom-0 right-0 hidden w-[50%] sm:block xl:w-[60%]"
       />
-    </div>
+    </motion.div>
   );
 }
 

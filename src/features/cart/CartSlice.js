@@ -35,6 +35,13 @@ const cartSlice = createSlice({
 
       if (item.quantity === 0) cartSlice.caseReducers.deleteItem(state, action);
     },
+    updateNotes(state, action) {
+      const { menuId, notes } = action.payload;
+      const item = state.cart.find((item) => item.menuId === menuId);
+      if (item) {
+        item.notes = notes;
+      }
+    },
     clearCart(state) {
       state.cart = [];
     },
@@ -47,6 +54,7 @@ export const {
   increaseItemQuantity,
   decreaseItemQuantity,
   clearCart,
+  updateNotes,
 } = cartSlice.actions;
 
 export const getTotalQuantity = (state) =>

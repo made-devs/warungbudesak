@@ -4,10 +4,10 @@ import { formatCurrency } from '../../utils/helpers';
 import { addItem, getCurrentQuantityById } from '../cart/CartSlice';
 import DeleteItem from '../cart/DeleteItem';
 import UpdateItemQuantity from '../cart/UpdateItemQuantity';
+import { useState } from 'react';
 
 function MenuItem({ menuBali }) {
   const dispatch = useDispatch();
-
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = menuBali;
   const currentQuantity = useSelector(getCurrentQuantityById(id));
 
@@ -18,6 +18,7 @@ function MenuItem({ menuBali }) {
       quantity: 1,
       unitPrice: unitPrice,
       totalPrice: unitPrice * 1,
+      imageUrl,
     };
     dispatch(addItem(newItem));
   }

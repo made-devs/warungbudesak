@@ -5,43 +5,37 @@ import CartItem from './CartItem';
 import EmptyCart from './EmptyCart';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearCart, getCart, getCartUsername } from './CartSlice';
-import { motion } from 'framer-motion';
+import CartItemReview from './CartItemReview';
 
-function Cart() {
+function CartReview() {
   const username = useSelector(getCartUsername);
   const cart = useSelector(getCart);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   console.log(cart);
 
-  function handleDeleteCart() {
-    dispatch(clearCart());
-  }
+  // function handleDeleteCart() {
+  //   dispatch(clearCart());
+  // }
 
   if (!cart.length) return <EmptyCart />;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -400 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 400 }}
-      transition={{ duration: 0.3 }}
-      className="px-4 py-3 font-outfit xl:mx-auto xl:w-[70rem]"
-    >
-      <LinkButton to="/menu">&larr; Kembali ke Menu</LinkButton>
+    <div className="mb-6 font-outfit xl:mx-auto xl:w-[70rem] xl:px-0">
+      {/* <LinkButton to="/menu">&larr; Kembali ke Menu</LinkButton> */}
 
       <h2 className="mt-7 font-outfit text-xl font-semibold">
-        Your cart, {username}
+        Pesananmu, {username}
       </h2>
 
       <ul className="mt-3 divide-y divide-stone-200 border-b">
         {cart.map((item) => (
-          <CartItem item={item} key={item.menuId} />
+          <CartItemReview item={item} key={item.menuId} />
         ))}
       </ul>
 
-      <div className="mt-6 space-x-5">
+      {/* <div className="mt-6 space-x-5">
         <Link to="/order/new">
-          <Button to="/order/new">Konfirmasi</Button>
+          <Button to="/order/new">Pesan Sekarang</Button>
         </Link>
         <button onClick={handleDeleteCart} className="relative z-0">
           <span className="absolute left-0 top-0 ml-1 mt-1 h-full w-full rounded bg-black"></span>
@@ -49,9 +43,9 @@ function Cart() {
             Batalkan
           </span>
         </button>
-      </div>
-    </motion.div>
+      </div> */}
+    </div>
   );
 }
 
-export default Cart;
+export default CartReview;
